@@ -35,22 +35,45 @@ Logical circuit of the above expressions is given below:
 Figure 02  Encoder 8 * 3
 
 **Procedure**
-
-/* write all the steps invloved */
+```
+- Create a new project in Quartus and add your HDL source files.
+- Write your Verilog or VHDL design and compile it to check for errors.
+- Build a testbench file with input stimulus to verify your design.
+- Configure Quartus to use ModelSim as the simulator and include the testbench.
+- Run the simulation in ModelSim and view the output waveforms.
+```
 
 **PROGRAM**
 
-/* Program for Encoder 8 To 3 in Dataflow Modelling and verify its truth table in quartus using Verilog programming. 
+Program for Encoder 8 To 3 in Dataflow Modelling and verify its truth table in quartus using Verilog programming. 
 
-Developed by: RegisterNumber:
-*/
+Developed by: Tharani Rameshbabu RegisterNumber: 25018409
+```
+module encoder4to2 (
+    input  wire [3:0] in,   // 4 input lines
+    output reg  [1:0] out   // 2 output lines
+);
+    always @(*) begin
+        case (in)
+            4'b0001: out = 2'b00;
+            4'b0010: out = 2'b01;
+            4'b0100: out = 2'b10;
+            4'b1000: out = 2'b11;
+            default: out = 2'bxx;  // Invalid case
+        endcase
+    end
+endmodule
+```
 
-**RTL LOGIC FOR Encoder 8 To 3 in Dataflow Modelling**
+
+**RTL LOGIC FOR Encoder coder 8 To 3 in Dataflow Modelling**
+![alt text](<Screenshot (147).png>)
 
 **TIMING DIGRAMS FOR Encoder 8 To 3 in Dataflow Modelling**
+![alt text](<Screenshot (148).png>)
 
 **RESULTS**
-
+Thus the ENCODER 8 TO 3 DATAFLOW MODELLING using verilog and validating their functionality using their functional tables is implemented and verified.
 
 
 
